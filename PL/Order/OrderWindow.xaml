@@ -1,0 +1,43 @@
+﻿<Window x:Class="PL.Order.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        xmlns:local="clr-namespace:PL.Order"
+        mc:Ignorable="d"
+        Title="OrderWindow" Height="450" Width="800">
+    <Grid x:Name="Grid" DataContext="{Binding Order}">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Order/photo1.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="295*"/>
+            <ColumnDefinition Width="506*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Id:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.097,0.324" Width="54"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.254,0.599"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.722,0.211"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.523,1.363"/>
+        <Label Content="Status" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" />
+        <Label Content="OrderDate" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="PaymentDate" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+        <Label Content="ShipDate" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+        <Label Content="DeliveryDate" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+        <Label Content="TotalPrice" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name= "IdTextBox" HorizontalAlignment="Left" Margin="76,0,0,0" TextWrapping="Wrap" Text="{Binding Path=Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <TextBlock x:Name= "NameTextBox" HorizontalAlignment="Left" Margin="76,30,0,0" TextWrapping="Wrap" Text="{Binding Path=CustomerName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <TextBlock x:Name= "EmailTextBox" HorizontalAlignment="Left" Margin="76,60,0,0" TextWrapping="Wrap" Text="{Binding Path=CustomerEmail, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <TextBlock x:Name= "AddressTextBox" HorizontalAlignment="Left" Margin="76,90,0,0" TextWrapping="Wrap"  Text="{Binding Path=CustomerAdress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <TextBlock x:Name="StatutTextBox" HorizontalAlignment="Left" Margin="76,120,0,0" VerticalAlignment="Top" Width="130" Grid.Column="1" Text="{Binding Path=Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock x:Name= "OrderDateTextBox" HorizontalAlignment="Left" Margin="76,150,0,0" TextWrapping="Wrap"  Text="{Binding Path=OrderDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <TextBlock x:Name= "PaymentDateTextBox" HorizontalAlignment="Left" Margin="76,180,0,0" TextWrapping="Wrap"  Text="{Binding Path=PaymentDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <TextBlock x:Name= "ShipDateTextBox" HorizontalAlignment="Left" Margin="76,210,0,0" TextWrapping="Wrap"  Text="{Binding Path=ShipDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <TextBlock x:Name= "DeliveryDateTextBox" HorizontalAlignment="Left" Margin="76,240,0,0" TextWrapping="Wrap"  Text="{Binding Path=DeliveryDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <TextBlock x:Name= "TotalPriceTextBox" HorizontalAlignment="Left" Margin="76,270,0,0" TextWrapping="Wrap"  Text="{Binding Path=TotalPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <Button x:Name="UpdateShippingBtn" Content="Shipping Update" HorizontalAlignment="Left" Margin="20,343,0,0" VerticalAlignment="Top" Click="UpdateShippingButton_Click" RenderTransformOrigin="0.505,0.603" Height="30" Background="#FFC5B5BD"/>
+        <Button x:Name="UpdateReceivedBtn" Content="Received Update" HorizontalAlignment="Left" Margin="147,343,0,0" VerticalAlignment="Top" Click="UpdateReceivedButton_Click" RenderTransformOrigin="0.505,0.603" Height="30" Background="#FFC5B5BD"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="109,304,0,0" VerticalAlignment="Top" Click="DeleteButton_Click" RenderTransformOrigin="0.256,-1.631" Width="49" Height="30" Background="#FFC5B5BD"/>
+    </Grid>
+</Window>
