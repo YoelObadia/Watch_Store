@@ -1,18 +1,17 @@
- 
- hello yoel
-# dotNet5783_5971_3422
-Hello yoel
+This is a project in c# where we created a store of watches.
+For this, we used the layers model: DAL, BL, PL.
 
-salut moi
-final
+The DAL contains the data and a module for an default initialization of the entities and the CRUD methods.
+There are 3 entities in the DAL: Products(watches), Orders and OrderItems.
+We use interfaces for to implement the CRUD methods.
+There is also a Factory and Singleton design patterns that allow us to use just one reference of the DAl layer from the BL layer.
 
-Bonus
+The BL layer contains all the logic of the project and allow us the veracity of the data.
+We use also interfaces for to implement the CRUD methods, Factory and Singleton.
+There are new entities like Cart, ProductForList, OrderForList, ProductItems which are logicales entities.
 
-שימוש ב-TryParse בתוכניות בדיקה BlTest/DalTest (רכזים - 1 נק') <br/>
-שימוש מלא ב-binding (רכזים - עד 5 נק') <br/>
-סינגלטון - בטוח לתהליכונים (Thread Safe) (רכזים - 1 נק') <br/>
-אפשרות מחיקת אובייקטים של ישויות (כמובן בצורה הגיונית - אם אין קשר אליהם מאובייקטים אחרים) (רכזים עד 2 נק') <br/>
-ולידציה (בדיקת תקינות בסיסית) משולבת בתוך קישור לנתונים [binding] (סטודנטים) אושר - 1 נק'<br/>
-עדכון דינמית תצוגת חלונות פתוחים של רשימת הזמנות והזמנה (מנהל), של מעקב הזמנה (לקוח\קונה) בעזרת שימוש בתבנית אובזרבר ופועל רקע (עד 3 נק')<br/>
-עדכון כל שניה על התקדמות מעבר ההזמנה ממצב למצב בעזרת progress bar (שכלל אינטראקציה עם סימולטור) (עד 3 נק')<br/>
+The PL layer display all the data on windows with an automatic update on every action.
+The administrator can update or add a product, update the status of the order, delete an order delivered or check the order tracking.
+The client can check the list of items in the shop and creating a cart by adding products. The client can after check the cart and update the quantity of the product he wants to modify. He can after this finishing the cart that will be sent in the list of orders in the screen of the administrator.
 
+We also created a DalXml layer that is the new DAL layer and use the data in xml files. This allow us to continue where we stopped the program last time and not to begin every time from the default initialization.
