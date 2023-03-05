@@ -15,3 +15,5 @@ The administrator can update or add a product, update the status of the order, d
 The client can check the list of items in the shop and creating a cart by adding products. The client can after check the cart and update the quantity of the product he wants to modify. He can after this finishing the cart that will be sent in the list of orders in the screen of the administrator.
 
 We also created a DalXml layer that is the new DAL layer and use the data in xml files. This allow us to continue where we stopped the program last time and not to begin every time from the default initialization.
+
+There is also a simulator. We create a thread as a background worker of the PL and takes care of automatically updating order statuses from oldest to newest.
